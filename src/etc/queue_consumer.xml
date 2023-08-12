@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/consumer.xsd">
+    <consumer name="erp_order_export" queue="erp_order_export" connection="amqp"
+              handler="CristianoPacheco\OrderExport\Queue\Consumer\ErpOrderExportConsumer::execute"
+    />
+</config>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/topology.xsd">
+    <exchange name="erp_order_export" connection="amqp" type="topic">
+        <binding id="erp_order_export" topic="erp_order_export" destinationType="queue" destination="erp_order_export"/>
+    </exchange>
+</config>

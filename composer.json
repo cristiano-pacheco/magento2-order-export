@@ -1,0 +1,32 @@
+{
+    "name": "cristiano-pacheco/magento2-order-export",
+    "description": "",
+    "type": "magento2-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cristiano Pacheco",
+            "email": "contato@cristianopacheco.com.br"
+        }
+    ],
+    "require": {
+        "php": "^8.2"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://mirror.mage-os.org/",
+            "only": [
+                "magento/*"
+            ]
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/registration.php"
+        ],
+        "psr-4": {
+            "CristianoPacheco\\OrderExport\\": "src"
+        }
+    }
+}
