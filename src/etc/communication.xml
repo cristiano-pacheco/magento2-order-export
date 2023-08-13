@@ -2,4 +2,5 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
     <topic name="erp_order_export" request="CristianoPacheco\OrderExport\Api\Data\OrderExportDataInterface"/>
+    <topic name="erp_order_export_delay" request="CristianoPacheco\OrderExport\Api\Data\OrderExportDataInterface"/>
 </config>

@@ -2,6 +2,22 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/topology.xsd">
     <exchange name="erp_order_export" connection="amqp" type="topic">
-        <binding id="erp_order_export" topic="erp_order_export" destinationType="queue" destination="erp_order_export"/>
+        <binding id="erp_order_export" topic="erp_order_export" destinationType="queue" destination="erp_order_export">
+            <arguments>
+                <argument name="x-dead-letter-exchange" xsi:type="string">erp_order_export_delay</argument>
+                <argument name="x-dead-letter-routing-key" xsi:type="string">erp_order_export_delay</argument>
+                <argument name="topic_name" xsi:type="string">erp_order_export</argument>
+            </arguments>
+        </binding>
+    </exchange>
+    <exchange name="erp_order_export_delay" connection="amqp" type="topic">
+        <binding id="erp_order_export_delay" topic="erp_order_export_delay" destinationType="queue"
+                 destination="erp_order_export_delay">
+            <arguments>
+                <argument name="x-dead-letter-exchange" xsi:type="string">erp_order_export</argument>
+                <argument name="x-dead-letter-routing-key" xsi:type="string">erp_order_export</argument>
+                <argument name="x-message-ttl" xsi:type="number">60000</argument><!-- 1 minute in  milliseconds -->
+            </arguments>
+        </binding>
     </exchange>
 </config>
