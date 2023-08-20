@@ -12,8 +12,6 @@ class ExportOrderToErpService
     public function execute(OrderExportDataInterface $orderExportData): void
     {
         $orderId = $orderExportData->getOrderId();
-        if ($orderExportData->getOrderId() % 2 !== 0) {
-            throw new Exception("The order $orderId id is invalid");
-        }
+        throw new Exception("The order $orderId id is invalid");
     }
 }
