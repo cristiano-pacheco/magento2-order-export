@@ -6,7 +6,6 @@
             <arguments>
                 <argument name="x-dead-letter-exchange" xsi:type="string">erp_order_export_delay</argument>
                 <argument name="x-dead-letter-routing-key" xsi:type="string">erp_order_export_delay</argument>
-                <argument name="topic_name" xsi:type="string">erp_order_export</argument>
             </arguments>
         </binding>
     </exchange>
